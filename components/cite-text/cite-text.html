@@ -1,0 +1,28 @@
+<dom-module id="cite-text">
+
+	<template>
+
+	    <style>
+	      :host {
+	        display: inline-block;
+	      }
+	      
+	      div > ::content  {
+	        color: #3F51B5;
+	       	padding-left: 5px;
+	        padding-right: 5px;
+	        font-style: italic;
+
+	      }
+	    </style>
+	    <div><content></content></div>
+	</template>
+
+	<script>
+	  // register a new element called proto-element
+	  Polymer({
+	    is: "cite-text"
+	  });
+	</script>
+
+</dom-module>

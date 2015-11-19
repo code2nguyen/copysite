@@ -1,0 +1,35 @@
+<dom-module id="audio-button">
+	<link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="/bower_components/iron-icons/av-icons.html">
+
+	<template>
+		<style>
+			#audioFile {
+				display: none;
+			}
+		</style>
+		<paper-icon-button  id="playButton" icon="av:play-circle-outline"></paper-icon-button>
+		<audio id="audioFile" preload="false"/>
+	</template>
+	<script>
+		Polymer({
+	    	is: "audio-button",	    
+	    	properties: {
+	    		src: String
+	    	},
+	    	ready: function() {
+				var source = document.createElement('source');
+				source.src = this.src;
+				source.type = 'audio/mp3';
+				this.$.audioFile.appendChild(source);
+				
+	    		this.$.playButton.onclick = function(event) {
+	    			this.parentElement.$.audioFile.play();
+					event.preventDefault(); 
+					event.stopPropagation();
+	    		}
+  			}
+  			   
+	  	});
+	</script>
+</dom-module>
