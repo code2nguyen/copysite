@@ -1,6 +1,6 @@
 # Coysite
 
-Diplay the multimedia elements in a site.
+Diplay the multimedia elements of a site.
 
 Project use Google Web Engine SDK Python version.
 
